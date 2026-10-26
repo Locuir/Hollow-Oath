@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 1349bac6dc41b4ce924f84ca6a690b0c
+AssetOrigin:
+  serializedVersion: 1
+  productId: 412098
+  packageName: Pixel UI Fantasy Free - RPG GUI Sampler
+  packageVersion: 1.1.1
+  assetPath: Assets/PixelUIFantasyFree/Sprites/themes/parchment/panel_inset.png
+  uploadId: 1012126
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +76,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -128,10 +135,3 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 412098
-  packageName: Pixel UI Fantasy Free - RPG GUI Sampler
-  packageVersion: 1.1.1
-  assetPath: Assets/PixelUIFantasyFree/Sprites/themes/parchment/panel_inset.png
-  uploadId: 1012126

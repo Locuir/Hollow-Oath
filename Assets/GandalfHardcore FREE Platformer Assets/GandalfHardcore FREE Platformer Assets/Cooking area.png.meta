@@ -140,7 +140,7 @@ TextureImporter:
         y: 0
         width: 64
         height: 31
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -162,7 +162,7 @@ TextureImporter:
         y: 0
         width: 64
         height: 31
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -184,7 +184,7 @@ TextureImporter:
         y: 0
         width: 64
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -206,7 +206,7 @@ TextureImporter:
         y: 0
         width: 64
         height: 33
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -228,7 +228,7 @@ TextureImporter:
         y: 0
         width: 64
         height: 34
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -250,7 +250,7 @@ TextureImporter:
         y: 0
         width: 64
         height: 34
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -272,7 +272,7 @@ TextureImporter:
         y: 0
         width: 64
         height: 35
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -294,7 +294,7 @@ TextureImporter:
         y: 0
         width: 64
         height: 35
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -316,7 +316,7 @@ TextureImporter:
         y: 0
         width: 64
         height: 36
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -338,7 +338,7 @@ TextureImporter:
         y: 0
         width: 64
         height: 37
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -360,7 +360,7 @@ TextureImporter:
         y: 0
         width: 64
         height: 31
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -382,7 +382,7 @@ TextureImporter:
         y: 0
         width: 64
         height: 31
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -400,7 +400,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 3898dfd083188644a9b4e114606dfb44
     internalID: 0
     vertices: []
     indices: 
