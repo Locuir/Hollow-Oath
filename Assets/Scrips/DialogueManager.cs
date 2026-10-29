@@ -17,20 +17,25 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField, Min(0f)] private float typingSpeed = 0.03f;
+    [SerializeField] private Behaviour playerMovement;
 
+    private bool wasMovementEnabled;
     private DialogueData currentDialogue;
     private Coroutine typingCoroutine;
     private int currentLineIndex;
     private bool isTyping;
+    private NPCInteraction currentNPC;
 
     private void Awake()
     {
-        dialoguePanel.SetActive(false);
+        if (dialoguePanel != null)
+            dialoguePanel.SetActive(false);
 
         if (continueIcon != null)
             continueIcon.SetActive(false);
 
-        continueButton.onClick.AddListener(AdvanceDialogue);
+        if (continueButton != null)
+            continueButton.onClick.AddListener(AdvanceDialogue);
     }
 
     private void OnDestroy()
@@ -61,10 +66,17 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(DialogueData dialogue)
     {
         if (dialogue == null || dialogue.lines == null ||
-                dialogue.lines.Length == 0)
+            dialogue.lines.Length == 0 || currentDialogue != null)
             return;
 
-        StopTyping();
+        if (currentNPC != null)
+            currentNPC.HideInteractionPrompt();
+
+        if (playerMovement != null)
+        {
+            wasMovementEnabled = playerMovement.enabled;
+            playerMovement.enabled = false;
+        }
 
         currentDialogue = dialogue;
         currentLineIndex = 0;
@@ -81,10 +93,7 @@ public class DialogueManager : MonoBehaviour
         if (isTyping)
         {
             StopTyping();
-            dialogueText.text =
-                    currentDialogue.lines[currentLineIndex].text;
-
-            isTyping = false;
+            dialogueText.text = currentDialogue.lines[currentLineIndex].text;
 
             if (continueIcon != null)
                 continueIcon.SetActive(true);
@@ -162,9 +171,30 @@ public class DialogueManager : MonoBehaviour
         StopTyping();
 
         currentDialogue = null;
-        dialoguePanel.SetActive(false);
+
+        if (dialoguePanel != null)
+            dialoguePanel.SetActive(false);
 
         if (continueIcon != null)
             continueIcon.SetActive(false);
+
+        if (playerMovement != null && wasMovementEnabled)
+            playerMovement.enabled = true;
+
+        if (currentNPC != null)
+        {
+            currentNPC.ShowInteractionPrompt();
+            currentNPC = null;
+        }
+    }
+
+    public bool IsDialogueActive()
+    {
+        return currentDialogue != null;
+    }
+
+    public void SetCurrentNPC(NPCInteraction npc)
+    {
+        currentNPC = npc;
     }
 }

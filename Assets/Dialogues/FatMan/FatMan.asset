@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c23573aac6c842542b1665777f9e3822, type: 3}
+  m_Name: FatMan
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  lines:
+  - speakerName: The Butcher
+    portrait: {fileID: 21300000, guid: 3020804b26a692242856c785357a391a, type: 3}
+    text: Oh, look who's finally awake. Thought I'd have to bury you in my backyard.
+  - speakerName: Ashen
+    portrait: {fileID: -1512766464214677766, guid: c3e96d18b70cd404aa460a0fcd1c3ec6, type: 3}
+    text: ...Where am I?
+  - speakerName: The Butcher
+    portrait: {fileID: 21300000, guid: 3020804b26a692242856c785357a391a, type: 3}
+    text: In my house, genius. Unless you think I dragged you three miles through
+      the forest just to dump you in a ditch.
+  - speakerName: Ashen
+    portrait: {fileID: -1512766464214677766, guid: c3e96d18b70cd404aa460a0fcd1c3ec6, type: 3}
+    text: The forest...? How did I get here?
+  - speakerName: The Butcher
+    portrait: {fileID: 21300000, guid: 3020804b26a692242856c785357a391a, type: 3}
+    text: Found you lying unconscious while I was out hunting. Three days ago. Been
+      sleeping like a dead boar ever since.
+  - speakerName: Ashen
+    portrait: {fileID: -1512766464214677766, guid: c3e96d18b70cd404aa460a0fcd1c3ec6, type: 3}
+    text: Three days?! I... I don't remember anything.
+  - speakerName: The Butcher
+    portrait: {fileID: 21300000, guid: 3020804b26a692242856c785357a391a, type: 3}
+    text: Yeah, well, you weren't exactly in a talking mood when I found you.
+  - speakerName: Ashen
+    portrait: {fileID: -1512766464214677766, guid: c3e96d18b70cd404aa460a0fcd1c3ec6, type: 3}
+    text: Who are you? And where is this place?
+  - speakerName: The Butcher
+    portrait: {fileID: 21300000, guid: 3020804b26a692242856c785357a391a, type: 3}
+    text: Name's not important. I'm the butcher around here. And this is Grazlin
+      Village.
+  - speakerName: Ashen
+    portrait: {fileID: -1512766464214677766, guid: c3e96d18b70cd404aa460a0fcd1c3ec6, type: 3}
+    text: Grazlin Village... I've never heard of it.
+  - speakerName: The Butcher
+    portrait: {fileID: 21300000, guid: 3020804b26a692242856c785357a391a, type: 3}
+    text: Congratulations. You've discovered a place you've never heard of. Happens
+      to people who wander into the woods and nearly get themselves killed.
+  - speakerName: The Butcher
+    portrait: {fileID: 21300000, guid: 3020804b26a692242856c785357a391a, type: 3}
+    text: Hmph. Figures. Listen, stranger. You've been under my roof for three days,
+      eating my food and taking up space. You're lucky I'm not charging you for the
+      trouble.
+  - speakerName: Ashen
+    portrait: {fileID: -1512766464214677766, guid: c3e96d18b70cd404aa460a0fcd1c3ec6, type: 3}
+    text: Oh... Wait.
+  - speakerName: The Butcher
+    portrait: {fileID: 21300000, guid: 3020804b26a692242856c785357a391a, type: 3}
+    text: What now?
+  - speakerName: Ashen
+    portrait: {fileID: -1512766464214677766, guid: c3e96d18b70cd404aa460a0fcd1c3ec6, type: 3}
+    text: The King! I was supposed to speak to the King!
+  - speakerName: The Butcher
+    portrait: {fileID: 21300000, guid: 3020804b26a692242856c785357a391a, type: 3}
+    text: Oh, wonderful. He's lost his mind.
+  - speakerName: Ashen
+    portrait: {fileID: -1512766464214677766, guid: c3e96d18b70cd404aa460a0fcd1c3ec6, type: 3}
+    text: No, you don't understand! I had something important to tell him. Something
+      urgent!
+  - speakerName: The Butcher
+    portrait: {fileID: 21300000, guid: 3020804b26a692242856c785357a391a, type: 3}
+    text: Then go don't bother me anymore
