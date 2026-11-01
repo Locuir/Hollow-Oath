@@ -67,6 +67,8 @@ public class PlayerController : MonoBehaviour
             groundLayer
         );
 
+        animator.SetFloat("YVelocity", rb.linearVelocity.y);
+
         if (isBusy)
         {
             animator.SetBool("IsMoving", false);
@@ -95,7 +97,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        isDefending = mouse.rightButton.isPressed && isGrounded;
+        isDefending = mouse != null && mouse.rightButton.isPressed && isGrounded;
 
         if (isDefending)
         {
@@ -114,6 +116,8 @@ public class PlayerController : MonoBehaviour
             );
 
             animator.SetBool("InAir", true);
+            animator.SetTrigger("Jump");
+
             wasFalling = false;
         }
 
@@ -146,7 +150,7 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("InAir", true);
 
-            if (rb.linearVelocity.y <= 0f && !wasFalling)
+            if (rb.linearVelocity.y < 0f && !wasFalling)
             {
                 animator.SetTrigger("Fall");
                 wasFalling = true;
@@ -189,7 +193,6 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity.y
         );
     }
-
 
     private IEnumerator AttackCombo()
     {
