@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform visual;
+    [SerializeField] private PlayerCombat playerCombat;
 
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 5f;
@@ -26,15 +27,21 @@ public class PlayerController : MonoBehaviour
 
     private float horizontal;
     private int facingDirection = 1;
+
     private bool isGrounded;
-    private bool wasGrounded;
     private bool isBusy;
     private bool isDead;
     private bool isDefending;
+    private bool isRolling;
     private bool wasFalling;
 
     private Keyboard keyboard;
     private Mouse mouse;
+
+    public bool IsDefending => isDefending;
+    public bool IsRolling => isRolling;
+    public bool IsDead => isDead;
+    public int FacingDirection => facingDirection;
 
     private void Awake()
     {
@@ -47,6 +54,9 @@ public class PlayerController : MonoBehaviour
         if (visual == null && animator != null)
             visual = animator.transform;
 
+        if (playerCombat == null)
+            playerCombat = GetComponentInChildren<PlayerCombat>();
+
         keyboard = Keyboard.current;
         mouse = Mouse.current;
     }
@@ -58,8 +68,6 @@ public class PlayerController : MonoBehaviour
 
         if (isDead || animator == null || groundCheck == null || keyboard == null)
             return;
-
-        wasGrounded = isGrounded;
 
         isGrounded = Physics2D.OverlapCircle(
             groundCheck.position,
@@ -80,13 +88,17 @@ public class PlayerController : MonoBehaviour
             if (isGrounded)
                 StartCoroutine(AttackCombo());
             else
+            {
+                playerCombat?.PrepareAirAttack();
                 StartCoroutine(PlayTrigger("AirAttack"));
+            }
 
             return;
         }
 
         if (keyboard.fKey.wasPressedThisFrame && isGrounded)
         {
+            playerCombat?.PrepareSpecialAttack();
             StartCoroutine(PlayTrigger("Special Attack"));
             return;
         }
@@ -97,13 +109,20 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        isDefending = mouse != null && mouse.rightButton.isPressed && isGrounded;
+        isDefending = mouse != null &&
+                      mouse.rightButton.isPressed &&
+                      isGrounded;
 
         if (isDefending)
         {
             horizontal = 0f;
             animator.SetBool("IsMoving", false);
-            rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
+
+            rb.linearVelocity = new Vector2(
+                0f,
+                rb.linearVelocity.y
+            );
+
             SetTriggerOnce("Defend");
             return;
         }
@@ -143,7 +162,7 @@ public class PlayerController : MonoBehaviour
 
         animator.SetBool(
             "IsMoving",
-            Mathf.Abs(horizontal) > 0.01f && isGrounded && !isBusy
+            Mathf.Abs(horizontal) > 0.01f && isGrounded
         );
 
         if (!isGrounded)
@@ -171,7 +190,12 @@ public class PlayerController : MonoBehaviour
         if (isBusy || isDefending)
         {
             if (isDefending)
-                rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
+            {
+                rb.linearVelocity = new Vector2(
+                    0f,
+                    rb.linearVelocity.y
+                );
+            }
 
             return;
         }
@@ -198,6 +222,7 @@ public class PlayerController : MonoBehaviour
     {
         isBusy = true;
         horizontal = 0f;
+
         animator.SetBool("IsMoving", false);
 
         int roll = Random.Range(1, 101);
@@ -210,6 +235,8 @@ public class PlayerController : MonoBehaviour
         else
             attackNumber = 3;
 
+        playerCombat?.PrepareAttack(attackNumber);
+
         Debug.Log("Selected Attack: " + attackNumber);
 
         yield return PlayTriggerAndWait("Attack " + attackNumber);
@@ -220,6 +247,9 @@ public class PlayerController : MonoBehaviour
     private IEnumerator PerformRoll()
     {
         isBusy = true;
+        isRolling = true;
+
+        horizontal = 0f;
         animator.SetBool("IsMoving", false);
 
         rb.linearVelocity = new Vector2(
@@ -229,6 +259,7 @@ public class PlayerController : MonoBehaviour
 
         yield return PlayTriggerAndWait("Roll");
 
+        isRolling = false;
         isBusy = false;
     }
 
@@ -236,6 +267,7 @@ public class PlayerController : MonoBehaviour
     {
         isBusy = true;
         horizontal = 0f;
+
         animator.SetBool("IsMoving", false);
 
         yield return PlayTriggerAndWait(triggerName);
@@ -255,10 +287,14 @@ public class PlayerController : MonoBehaviour
 
         while (elapsed < timeout)
         {
-            AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
+            AnimatorStateInfo state =
+                animator.GetCurrentAnimatorStateInfo(0);
 
-            if (state.normalizedTime >= 1f && !animator.IsInTransition(0))
+            if (state.normalizedTime >= 1f &&
+                !animator.IsInTransition(0))
+            {
                 break;
+            }
 
             elapsed += Time.deltaTime;
             yield return null;
@@ -277,10 +313,22 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void PlayHitReaction()
+    {
+        if (isDead || isDefending || isRolling)
+            return;
+
+        StopAllCoroutines();
+
+        isBusy = false;
+        horizontal = 0f;
+
+        StartCoroutine(PlayTrigger("TakeHit"));
+    }
+
     public void TakeHit()
     {
-        if (!isDead && !isBusy)
-            StartCoroutine(PlayTrigger("TakeHit"));
+        PlayHitReaction();
     }
 
     public void Die()
@@ -292,9 +340,14 @@ public class PlayerController : MonoBehaviour
 
         isDead = true;
         isBusy = true;
+        isDefending = false;
+        isRolling = false;
+        horizontal = 0f;
+
         rb.linearVelocity = Vector2.zero;
 
         animator.SetBool("IsMoving", false);
+        animator.SetBool("InAir", false);
         animator.SetTrigger("Death");
     }
 
@@ -304,6 +357,7 @@ public class PlayerController : MonoBehaviour
             return;
 
         Gizmos.color = Color.yellow;
+
         Gizmos.DrawWireSphere(
             groundCheck.position,
             groundCheckRadius

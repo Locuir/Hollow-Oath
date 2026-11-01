@@ -128,6 +128,13 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.4
+    functionName: ApplyAttackDamage
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.4
     functionName: PlaySoundEvent
     data: Slash1
     objectReferenceParameter: {fileID: 0}
@@ -137,6 +144,13 @@ AnimationClip:
   - time: 0.9
     functionName: PlaySoundEvent
     data: Slash2
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.1
+    functionName: ApplyAttackDamage
+    data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

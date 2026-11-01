@@ -190,10 +190,7 @@ public class BossAI : MonoBehaviour
 
             if (Random.value < attack3Chance)
             {
-                StartAttack(
-                                        "Attack3",
-                                                            attack3Damage,
-                                                                                attack3Duration);
+                StartAttack("Attack3",attack3Damage,attack3Duration);
 
                 return;
             }
@@ -201,17 +198,11 @@ public class BossAI : MonoBehaviour
 
         if (Random.value < 0.5f)
         {
-            StartAttack(
-                                "Attack1",
-                                                attack1Damage,
-                                                                attack1Duration);
+            StartAttack("Attack1",attack1Damage,attack1Duration);
         }
         else
         {
-            StartAttack(
-                                "Attack2",
-                                                attack2Damage,
-                                                                attack2Duration);
+            StartAttack("Attack2",attack2Damage,attack2Duration);
         }
     }
 
