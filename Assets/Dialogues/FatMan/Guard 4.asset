@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c23573aac6c842542b1665777f9e3822, type: 3}
+  m_Name: Guard 4
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  lines:
+  - speakerName: Guard 1
+    portrait: {fileID: 21300000, guid: deb435790b9949f478038d632b6701ed, type: 3}
+    text: Stop right there! You're not allowed beyond this point.
+  - speakerName: Ashen
+    portrait: {fileID: -1512766464214677766, guid: c3e96d18b70cd404aa460a0fcd1c3ec6, type: 3}
+    text: I need to see the King. It's urgent.
+  - speakerName: Guard 2
+    portrait: {fileID: -1512766464214677766, guid: c3e96d18b70cd404aa460a0fcd1c3ec6, type: 3}
+    text: We've already told you. The King is not receiving anyone. Turn back."
+  - speakerName: Ashen
+    portrait: {fileID: -1512766464214677766, guid: c3e96d18b70cd404aa460a0fcd1c3ec6, type: 3}
+    text: You don't understand. I'm the King's right hand! I must speak with him
+      immediately!"
+  - speakerName: Guard 1
+    portrait: {fileID: 21300000, guid: deb435790b9949f478038d632b6701ed, type: 3}
+    text: -Laughs-. The King's right hand? You?
+  - speakerName: Guard 2
+    portrait: {fileID: 21300000, guid: deb435790b9949f478038d632b6701ed, type: 3}
+    text: That's enough. Walk away while you still can.
+  - speakerName: Ashen
+    portrait: {fileID: -1512766464214677766, guid: c3e96d18b70cd404aa460a0fcd1c3ec6, type: 3}
+    text: '"I won''t leave until I''ve spoken to him!'
+  - speakerName: Guard 1
+    portrait: {fileID: 21300000, guid: deb435790b9949f478038d632b6701ed, type: 3}
+    text: ast warning. Leave now, or we'll drag you out in pieces.
+  - speakerName: Ashen
+    portrait: {fileID: -1512766464214677766, guid: c3e96d18b70cd404aa460a0fcd1c3ec6, type: 3}
+    text: ...Then I suppose you'll have to try.
+  - speakerName: Guard 2
+    portrait: {fileID: 21300000, guid: deb435790b9949f478038d632b6701ed, type: 3}
+    text: The guards draw their weapons.
+  - speakerName: Guard 2
+    portrait: {fileID: 21300000, guid: deb435790b9949f478038d632b6701ed, type: 3}
+    text: Take him down!

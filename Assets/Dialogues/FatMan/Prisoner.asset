@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c23573aac6c842542b1665777f9e3822, type: 3}
+  m_Name: Prisoner
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  lines:
+  - speakerName: Ashen
+    portrait: {fileID: -1512766464214677766, guid: c3e96d18b70cd404aa460a0fcd1c3ec6, type: 3}
+    text: Are you alrightAre you alright?
+  - speakerName: Prisoner
+    portrait: {fileID: 21300000, guid: 486f321c347824440baeab97fee72251, type: 3}
+    text: Do I look alright to you?
+  - speakerName: Ashen
+    portrait: {fileID: -1512766464214677766, guid: c3e96d18b70cd404aa460a0fcd1c3ec6, type: 3}
+    text: I was just trying to help.
+  - speakerName: Prisoner
+    portrait: {fileID: 21300000, guid: 486f321c347824440baeab97fee72251, type: 3}
+    text: Then help me get to the King. I need to speak with him
+  - speakerName: Ashen
+    portrait: {fileID: -1512766464214677766, guid: c3e96d18b70cd404aa460a0fcd1c3ec6, type: 3}
+    text: What's this urgent message you keep talking about?
+  - speakerName: Prisoner
+    portrait: {fileID: 21300000, guid: 486f321c347824440baeab97fee72251, type: 3}
+    text: 'My message...?
+
+      -He pauses, trying to remember-'
+  - speakerName: Prisoner
+    portrait: {fileID: 21300000, guid: 486f321c347824440baeab97fee72251, type: 3}
+    text: I... I don't know.
+  - speakerName: Ashen
+    portrait: {fileID: -1512766464214677766, guid: c3e96d18b70cd404aa460a0fcd1c3ec6, type: 3}
+    text: What do you mean you don't know?
+  - speakerName: Prisoner
+    portrait: {fileID: 21300000, guid: 486f321c347824440baeab97fee72251, type: 3}
+    text: I know it's important. I know the King has to hear it. But... what was
+      it?
+  - speakerName: Ashen
+    portrait: {fileID: -1512766464214677766, guid: c3e96d18b70cd404aa460a0fcd1c3ec6, type: 3}
+    text: You can't remember your own message?
+  - speakerName: Prisoner
+    portrait: {fileID: 21300000, guid: 486f321c347824440baeab97fee72251, type: 3}
+    text: 'I don''t know! I just know I have to tell him!
+
+      (The prisoner looks
+      at the player for a moment.)'
+  - speakerName: Prisoner
+    portrait: {fileID: 21300000, guid: 486f321c347824440baeab97fee72251, type: 3}
+    text: What about you? What's your message?
+  - speakerName: Ashen
+    portrait: {fileID: -1512766464214677766, guid: c3e96d18b70cd404aa460a0fcd1c3ec6, type: 3}
+    text: ......
+  - speakerName: Ashen
+    portrait: {fileID: -1512766464214677766, guid: c3e96d18b70cd404aa460a0fcd1c3ec6, type: 3}
+    text: I... don't remember.
+  - speakerName: Prisoner
+    portrait: {fileID: 21300000, guid: 486f321c347824440baeab97fee72251, type: 3}
+    text: You don't remember?
+  - speakerName: Ashen
+    portrait: {fileID: -1512766464214677766, guid: c3e96d18b70cd404aa460a0fcd1c3ec6, type: 3}
+    text: I know I have to reach the King. There's something I need to tell him.
+      Something important.
+  - speakerName: Prisoner
+    portrait: {fileID: 21300000, guid: 486f321c347824440baeab97fee72251, type: 3}
+    text: Then you and I aren't so different, are we?
+  - speakerName: Ashen
+    portrait: {fileID: -1512766464214677766, guid: c3e96d18b70cd404aa460a0fcd1c3ec6, type: 3}
+    text: Look at us... Both desperate to reach a King who may not even want to hear
+      us.
+  - speakerName: Prisoner
+    portrait: {fileID: 21300000, guid: 486f321c347824440baeab97fee72251, type: 3}
+    text: Look at us... Both desperate to reach a King who may not even want to hear
+      us.
+  - speakerName: Ashen
+    portrait: {fileID: -1512766464214677766, guid: c3e96d18b70cd404aa460a0fcd1c3ec6, type: 3}
+    text: At least I'm not in chains like you.
+  - speakerName: Prisoner
+    portrait: {fileID: 21300000, guid: 486f321c347824440baeab97fee72251, type: 3}
+    text: Heh... Not yet.

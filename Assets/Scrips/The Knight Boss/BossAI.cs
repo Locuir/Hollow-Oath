@@ -2,14 +2,14 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class BossAI : MonoBehaviour
+public class BossAI : MonoBehaviour, IPlayerTarget
 {
     [Header("References")]
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Animator animator;
     [SerializeField] private Transform visual;
-    [SerializeField] private Transform player;
     [SerializeField] private BossHealth bossHealth;
+    [SerializeField] private Transform player;
     [SerializeField] private BossCombat bossCombat;
 
     [Header("Detection")]
@@ -64,6 +64,11 @@ public class BossAI : MonoBehaviour
     public bool IsDefending => isDefending;
     public bool IsDead => isDead;
 
+
+    public void SetPlayerTarget(Transform target)
+    {
+        player = target;
+    }
     private void Awake()
     {
         if (rb == null)
