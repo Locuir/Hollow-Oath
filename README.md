@@ -1,4 +1,4 @@
-# [Hollow Oath]
+## Hollow Oath
 
 <p align="center">
  <img width="1920" height="1080" alt="Hollow-OathbANNER" src="https://github.com/user-attachments/assets/092c9a48-9d17-4f82-97e8-57a39282e7f2" />
