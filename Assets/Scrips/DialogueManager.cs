@@ -27,6 +27,10 @@ public class DialogueManager : MonoBehaviour
     [Header("Dialogue Events")]
     [SerializeField] private DialogueData finalSoldierDialogue;
     [SerializeField] private UnityEvent onFinalSoldierDialogueCompleted;
+    [SerializeField] private DialogueData butcherDialogue;
+    [SerializeField] private UnityEvent onButcherDialogueCompleted;
+    [SerializeField] private DialogueData prisonerDialogue;
+    [SerializeField] private UnityEvent onPrisonerDialogueCompleted;
 
     private bool wasMovementEnabled;
     private DialogueData currentDialogue;
@@ -233,15 +237,39 @@ public class DialogueManager : MonoBehaviour
 
         if (playerMovement != null && wasMovementEnabled)
             playerMovement.enabled = true;
-
         if (currentNPC != null)
         {
+            QuestNPC questNPC = currentNPC.GetComponent<QuestNPC>();
+
+            if (questNPC != null)
+            {
+                Debug.Log("NPC Dialogue Completed: " + currentNPC.name);
+                questNPC.OnDialogueCompleted();
+            }
+            else
+            {
+                Debug.LogWarning("QuestNPC component not found on: " + currentNPC.name);
+            }
+
             currentNPC.ShowInteractionPrompt();
             currentNPC = null;
         }
         if (completedDialogue == finalSoldierDialogue)
         {
             onFinalSoldierDialogueCompleted?.Invoke();
+        }
+        if (completedDialogue == butcherDialogue)
+        {
+            Debug.Log("Butcher Dialogue Completed!");
+            onButcherDialogueCompleted?.Invoke();
+        }
+        else
+        {
+            Debug.LogWarning("Completed dialogue is not the assigned Butcher Dialogue!");
+        }
+        if (completedDialogue == prisonerDialogue)
+        {
+            onPrisonerDialogueCompleted?.Invoke();
         }
     }
 

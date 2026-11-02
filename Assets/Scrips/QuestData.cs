@@ -1,16 +1,9 @@
 using UnityEngine;
 
-public class QuestData : MonoBehaviour
+[CreateAssetMenu(fileName = "New Quest", menuName = "Quests/Quest Data")]
+public class QuestData : ScriptableObject
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public string questTitle;
+    [TextArea(2, 3)]
+    public string objective;
 }

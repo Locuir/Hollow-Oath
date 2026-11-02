@@ -3530,6 +3530,7 @@ GameObject:
   m_Component:
   - component: {fileID: 575004981}
   - component: {fileID: 575004980}
+  - component: {fileID: 575004982}
   m_Layer: 0
   m_Name: GameManger
   m_TagString: Untagged
@@ -3575,6 +3576,26 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  butcherDialogue: {fileID: 0}
+  onButcherDialogueCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  prisonerDialogue: {fileID: 11400000, guid: efe0a9f7e9b45d546806d6c2f1ff9f60, type: 2}
+  onPrisonerDialogueCompleted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 575004982}
+        m_TargetAssemblyTypeName: QuestManager, Assembly-CSharp
+        m_MethodName: CompletePrisonerQuest
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &575004981
 Transform:
   m_ObjectHideFlags: 0
@@ -3590,6 +3611,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &575004982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575004979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f0a6ed3632eafc4aad8bbb6bc2696ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuestManager
+  quests:
+  - {fileID: 11400000, guid: 02cbacc10eb34d44e99affd05f854cb2, type: 2}
+  requiredNPCs: []
+  questTitleText: {fileID: 410042965}
+  objectiveText: {fileID: 1536396128}
+  startingQuestIndex: 3
 --- !u!1 &581102603
 GameObject:
   m_ObjectHideFlags: 0
@@ -6385,7 +6424,7 @@ Transform:
   m_GameObject: {fileID: 961793767}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 34.82, y: 0.89, z: 0}
+  m_LocalPosition: {x: -12.8, y: 0.89, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
