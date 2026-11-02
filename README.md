@@ -12,7 +12,7 @@
 
 ## Overview
 
-**[Hollow Oath]** is a 2D Pixel Art Action Platformer developed using Unity.
+**Hollow Oath** is a 2D Pixel Art Action Platformer developed using Unity.
 
 Explore a mysterious world, interact with its inhabitants, fight dangerous enemies, and uncover the truth behind a forgotten past.
 
