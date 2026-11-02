@@ -62,7 +62,6 @@ As you travel through the kingdom, you begin to uncover strange details that cha
 <img width="2560" height="1440" alt="Hollow Oath Screenshot 2026 11 03 - 01 32 44 43" src="https://github.com/user-attachments/assets/5818503b-50a7-4e89-a7bd-e7fe267026bd" />
 <img width="2560" height="1440" alt="Hollow Oath Screenshot 2026 11 03 - 01 32 24 48" src="https://github.com/user-attachments/assets/6d79c2dd-3f97-4167-80d2-5e3142e233e4" />
 <img width="2560" height="1440" alt="Hollow Oath Screenshot 2026 11 03 - 01 32 15 91" src="https://github.com/user-attachments/assets/8fccc75f-86af-4e92-9263-d89537e5fd33" />
-<img width="2560" height="1440" alt="Hollow Oath Screenshot 2026 11 03 - 01 31 57 23" src="https://github.com/user-attachments/assets/0e66547f-50cd-415d-a4f4-06627b3fe919" />
 <img width="2560" height="1440" alt="Hollow Oath Screenshot 2026 11 03 - 01 34 09 94" src="https://github.com/user-attachments/assets/e08af1fb-3a6c-4361-ad45-ce04cd0023ca" />
 <img width="2560" height="1440" alt="Hollow Oath Screenshot 2026 11 03 - 01 34 03 68" src="https://github.com/user-attachments/assets/bc9c7847-14d6-4366-9052-df49060af05d" />
 
