@@ -15,37 +15,49 @@ MonoBehaviour:
   lines:
   - speakerName: Guard
     portrait: {fileID: 21300000, guid: deb435790b9949f478038d632b6701ed, type: 3}
+    voiceProfile: {fileID: 11400000, guid: 69ef7aaf29b073a41b95aaf4c3cfafe4, type: 2}
     text: Hey! You! What do you want?
   - speakerName: Ashen
     portrait: {fileID: -1512766464214677766, guid: c3e96d18b70cd404aa460a0fcd1c3ec6, type: 3}
+    voiceProfile: {fileID: 11400000, guid: 69ef7aaf29b073a41b95aaf4c3cfafe4, type: 2}
     text: I need to speak with the King.
   - speakerName: Guard
     portrait: {fileID: 21300000, guid: deb435790b9949f478038d632b6701ed, type: 3}
+    voiceProfile: {fileID: 0}
     text: Of course you do. That's all anyone ever wants
   - speakerName: Ashen
     portrait: {fileID: -1512766464214677766, guid: c3e96d18b70cd404aa460a0fcd1c3ec6, type: 3}
+    voiceProfile: {fileID: 0}
     text: It's urgent. I have a message for him
   - speakerName: Guard
     portrait: {fileID: 21300000, guid: deb435790b9949f478038d632b6701ed, type: 3}
+    voiceProfile: {fileID: 0}
     text: Another one with an urgent message? How convenient.
   - speakerName: Ashen
     portrait: {fileID: -1512766464214677766, guid: c3e96d18b70cd404aa460a0fcd1c3ec6, type: 3}
+    voiceProfile: {fileID: 0}
     text: We spoke just a few days ago. Surely you remember me.
   - speakerName: Guard
     portrait: {fileID: 21300000, guid: deb435790b9949f478038d632b6701ed, type: 3}
+    voiceProfile: {fileID: 0}
     text: ...Have we?
   - speakerName: Ashen
     portrait: {fileID: -1512766464214677766, guid: c3e96d18b70cd404aa460a0fcd1c3ec6, type: 3}
+    voiceProfile: {fileID: 0}
     text: Yes. We spoke near the eastern gate
   - speakerName: Guard
     portrait: {fileID: 21300000, guid: deb435790b9949f478038d632b6701ed, type: 3}
+    voiceProfile: {fileID: 0}
     text: Well, I don't remember. And I don't have time for this.
   - speakerName: Ashen
     portrait: {fileID: -1512766464214677766, guid: c3e96d18b70cd404aa460a0fcd1c3ec6, type: 3}
+    voiceProfile: {fileID: 0}
     text: That's alright. I only need a moment of your time.
   - speakerName: Guard
     portrait: {fileID: 21300000, guid: deb435790b9949f478038d632b6701ed, type: 3}
+    voiceProfile: {fileID: 0}
     text: You're not getting past me. Now move.
   - speakerName: Ashen
     portrait: {fileID: -1512766464214677766, guid: c3e96d18b70cd404aa460a0fcd1c3ec6, type: 3}
+    voiceProfile: {fileID: 0}
     text: -The player notices a man on the ground, held down by another guard-

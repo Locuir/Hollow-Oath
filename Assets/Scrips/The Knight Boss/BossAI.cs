@@ -11,11 +11,10 @@ public class BossAI : MonoBehaviour, IPlayerTarget
     [SerializeField] private BossHealth bossHealth;
     [SerializeField] private Transform player;
     [SerializeField] private BossCombat bossCombat;
-
     [Header("Detection")]
-    [SerializeField] private float detectionRange = 12f;
-    [SerializeField] private float attackRange = 1.8f;
-    [SerializeField] private float runAttackDistance = 4f;
+    [SerializeField] private float detectionRange = 10f;
+    [SerializeField] private float attackRange = 1.5f;
+    [SerializeField] private float runAttackDistance = 5f;
 
     [Header("Movement")]
     [SerializeField] private float walkSpeed = 2.5f;

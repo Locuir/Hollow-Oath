@@ -14,6 +14,10 @@ public class BossHealth : MonoBehaviour, IDamageable
     [SerializeField] private Animator animator;
     [SerializeField] private BossAI bossAI;
 
+    [Header("Colliders")]
+    [SerializeField] private Collider2D aliveCollider;
+    [SerializeField] private Collider2D deathCollider;
+
     private float currentHealth;
     private bool isDead;
     private bool isDefending;
@@ -26,6 +30,13 @@ public class BossHealth : MonoBehaviour, IDamageable
 
     private void Awake()
     {
+
+        if (aliveCollider != null)
+            aliveCollider.enabled = true;
+
+        if (deathCollider != null)
+            deathCollider.enabled = false;
+
         currentHealth = maxHealth;
 
         if (animator == null)
@@ -68,10 +79,22 @@ public class BossHealth : MonoBehaviour, IDamageable
             return;
 
         isDead = true;
+
+        if (aliveCollider != null)
+            aliveCollider.enabled = false;
+
+        if (deathCollider != null)
+            deathCollider.enabled = true;
+
+       
         isDefending = false;
 
         if (bossAI != null)
             bossAI.OnDeath();
+
+        Collider2D[] colliders = GetComponentsInChildren<Collider2D>();
+
+
 
         if (animator != null)
         {

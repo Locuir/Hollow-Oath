@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -15,9 +16,17 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject continueIcon;
     [SerializeField] private Button continueButton;
 
+    [Header("Blip Audio")]
+    [SerializeField] private AudioSource voiceAudioSource;
+    [SerializeField] private DialogueVoiceProfile blipProfile;
+
     [Header("Settings")]
     [SerializeField, Min(0f)] private float typingSpeed = 0.03f;
     [SerializeField] private Behaviour playerMovement;
+
+    [Header("Dialogue Events")]
+    [SerializeField] private DialogueData finalSoldierDialogue;
+    [SerializeField] private UnityEvent onFinalSoldierDialogueCompleted;
 
     private bool wasMovementEnabled;
     private DialogueData currentDialogue;
@@ -25,6 +34,7 @@ public class DialogueManager : MonoBehaviour
     private int currentLineIndex;
     private bool isTyping;
     private NPCInteraction currentNPC;
+    private int characterCounter;
 
     private void Awake()
     {
@@ -122,6 +132,8 @@ public class DialogueManager : MonoBehaviour
         characterImage.sprite = line.portrait;
         characterImage.enabled = line.portrait != null;
 
+        characterCounter = 0;
+
         if (continueIcon != null)
             continueIcon.SetActive(false);
 
@@ -145,6 +157,9 @@ public class DialogueManager : MonoBehaviour
         foreach (char character in text)
         {
             dialogueText.text += character;
+
+            PlayBlip(character);
+
             yield return new WaitForSecondsRealtime(typingSpeed);
         }
 
@@ -153,6 +168,40 @@ public class DialogueManager : MonoBehaviour
 
         if (continueIcon != null)
             continueIcon.SetActive(true);
+    }
+
+    private void PlayBlip(char character)
+    {
+        if (blipProfile == null || voiceAudioSource == null)
+            return;
+
+        if (blipProfile.blips == null ||
+            blipProfile.blips.Length == 0)
+            return;
+
+        if (!char.IsLetterOrDigit(character))
+            return;
+
+        characterCounter++;
+
+        if (characterCounter < blipProfile.charactersPerBlip)
+            return;
+
+        characterCounter = 0;
+
+        AudioClip clip = blipProfile.blips[
+            Random.Range(0, blipProfile.blips.Length)
+        ];
+
+        if (clip == null)
+            return;
+
+        voiceAudioSource.pitch = Random.Range(
+            Mathf.Min(blipProfile.pitchMin, blipProfile.pitchMax),
+            Mathf.Max(blipProfile.pitchMin, blipProfile.pitchMax)
+        );
+
+        voiceAudioSource.PlayOneShot(clip, blipProfile.volume);
     }
 
     private void StopTyping()
@@ -166,11 +215,15 @@ public class DialogueManager : MonoBehaviour
         isTyping = false;
     }
 
+
     public void EndDialogue()
     {
         StopTyping();
 
+        DialogueData completedDialogue = currentDialogue;
+
         currentDialogue = null;
+        characterCounter = 0;
 
         if (dialoguePanel != null)
             dialoguePanel.SetActive(false);
@@ -185,6 +238,10 @@ public class DialogueManager : MonoBehaviour
         {
             currentNPC.ShowInteractionPrompt();
             currentNPC = null;
+        }
+        if (completedDialogue == finalSoldierDialogue)
+        {
+            onFinalSoldierDialogueCompleted?.Invoke();
         }
     }
 

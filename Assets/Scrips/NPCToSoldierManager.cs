@@ -76,16 +76,19 @@ public class NPCToSoldierManager : MonoBehaviour
 
         foreach (SpawnData data in spawnPoints)
         {
+            GameObject soldier = Instantiate(soldierPrefab);
 
-            GameObject soldier = Instantiate(soldierPrefab,data.position,data.rotation,stagingObject.transform);
-            AssignPlayerReference(soldier);
-            soldier.SetActive(false);
+            soldier.transform.SetParent(data.parent, false);
 
-            soldier.transform.SetParent(data.parent, true);
+            soldier.transform.position = data.position;
+            soldier.transform.rotation = data.rotation;
 
             Vector3 scale = soldier.transform.localScale;
             scale.x = Mathf.Abs(scale.x) * Mathf.Sign(data.scale.x);
             soldier.transform.localScale = scale;
+
+            AssignPlayerReference(soldier);
+            soldier.SetActive(false);
 
             soldiers.Add(soldier);
         }

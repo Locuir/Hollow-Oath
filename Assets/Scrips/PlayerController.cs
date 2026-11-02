@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform visual;
     [SerializeField] private PlayerCombat playerCombat;
+    [SerializeField] private PlayerMana playerMana;
 
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 5f;
@@ -57,6 +58,9 @@ public class PlayerController : MonoBehaviour
         if (playerCombat == null)
             playerCombat = GetComponentInChildren<PlayerCombat>();
 
+        if (playerMana == null)
+            playerMana = GetComponent<PlayerMana>();
+
         keyboard = Keyboard.current;
         mouse = Mouse.current;
     }
@@ -98,8 +102,12 @@ public class PlayerController : MonoBehaviour
 
         if (keyboard.fKey.wasPressedThisFrame && isGrounded)
         {
-            playerCombat?.PrepareSpecialAttack();
-            StartCoroutine(PlayTrigger("Special Attack"));
+            if (playerMana != null && playerMana.TryUseSpecialAttack())
+            {
+                playerCombat?.PrepareSpecialAttack();
+                StartCoroutine(PlayTrigger("Special Attack"));
+            }
+
             return;
         }
 

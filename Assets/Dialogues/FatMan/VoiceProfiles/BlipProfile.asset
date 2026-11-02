@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aec5936145eeb604686b8cfeb241e621, type: 3}
+  m_Name: BlipProfile
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueVoiceProfile
+  blips:
+  - {fileID: 8300000, guid: 656e73d0596872b4aaf56c5fda3b2339, type: 3}
+  - {fileID: 8300000, guid: 6b391b09935801c47a8764da2c72d14a, type: 3}
+  - {fileID: 8300000, guid: 0e80e7ca15a768845b3a5314b7f8e4cd, type: 3}
+  - {fileID: 8300000, guid: 56430b7fd9adfe24d95f30a9a74b9602, type: 3}
+  - {fileID: 8300000, guid: 65cb18739a0d74840899013f84add8c6, type: 3}
+  volume: 0.5
+  pitchMin: 0.9
+  pitchMax: 1.1
+  charactersPerBlip: 1

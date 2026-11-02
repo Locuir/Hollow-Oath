@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 907163769071048055}
   - component: {fileID: 6198931274940528182}
   - component: {fileID: 1039161540717696381}
+  - component: {fileID: 168027090457244394}
   m_Layer: 9
   m_Name: Boss
   m_TagString: Untagged
@@ -63,7 +64,7 @@ Transform:
   m_GameObject: {fileID: 6910329887713410832}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.3392, y: -7.8915, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3.596756, y: 3.596756, z: 3.596756}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -230,12 +231,12 @@ MonoBehaviour:
   rb: {fileID: 4865369048989360110}
   animator: {fileID: 7108277909553573919}
   visual: {fileID: 4397098660714673924}
-  player: {fileID: 0}
   bossHealth: {fileID: 1039161540717696381}
+  player: {fileID: 0}
   bossCombat: {fileID: 6198931274940528182}
-  detectionRange: 10
-  attackRange: 2.5
-  runAttackDistance: 3.25
+  detectionRange: 20.28
+  attackRange: 1.84
+  runAttackDistance: 2.93
   walkSpeed: 2.5
   runSpeed: 5.5
   acceleration: 35
@@ -287,6 +288,45 @@ MonoBehaviour:
   defenseDamageMultiplier: 0.25
   animator: {fileID: 7108277909553573919}
   bossAI: {fileID: 907163769071048055}
+  aliveCollider: {fileID: 410521209313217788}
+  deathCollider: {fileID: 168027090457244394}
+--- !u!70 &168027090457244394
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6910329887713410832}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0, y: -0.27}
+  m_Size: {x: 0.54, y: 0.1}
+  m_Direction: 1
 --- !u!1 &8648123367868348551
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,7 +352,7 @@ Transform:
   m_GameObject: {fileID: 8648123367868348551}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.83674, y: 10.0623, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
