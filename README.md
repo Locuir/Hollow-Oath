@@ -86,6 +86,10 @@ This game is an independent game development project built with Unity and C#.
 
 The project focuses on combining gameplay programming, 2D level design, combat mechanics, and narrative storytelling.
 
+## Download
+You Download the game from itch.io 
+https://locuir0.itch.io/hollow-oath
+
 ## Credits
 
 Will be Addes soon...
